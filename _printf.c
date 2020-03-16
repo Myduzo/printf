@@ -1,6 +1,5 @@
 #include "holberton.h"
 #include <stdarg.h>
-#include <stdio.h>
 /**
  * _printf - recreat the function printf
  * @format: format of the entry
@@ -8,31 +7,42 @@
  */
 int _printf(const char *format, ...)
 {
+    class new[] = {
+        {"c", p_char},
+        {"i", p_int},
+        {"f", p_float},
+        {"s", p_string}
+    };
+
     va_list a;
+    int len, i, j ,len;
+
+    for (len = 0; format[len]; len++);
 
     va_start(a, foramt);
-    for (i = 0; i < strlen(format); i++)
+    for (i = 0; i < len; i++)
     {
-        if (format[i] == "%" && format[i + 1] == "c")
+        for (j = 0; j < 2; j+=2)
         {
-            x = va_arg(a, char);
-            print_char(x);
-        }
-        if (format[i] == "%" && format[i + 1] == "s")
-        {
-            x = va_arg(a, char *);
-            print_string(x);
+            if (format[i] == *new[0].character)
+            {
+                new[0].function(a);
+            }
         }
     }
+    printf("\n");
     va_end(a);
-    return (i);
+    return ();
 }
 
-void print_char(char c)
+
+
+
+void print_char(va_list argument)
 {
-    return (write(1, &c, 1));
+    return (write(1, va_arg(argument, int), 1));
 }
-void print_string(char *s)
+void print_string(va_list argument)
 {
-    return (write(1, &s, 1));
+    return (write(1, va_arg(argument, char *), 1));
 }

@@ -3,4 +3,9 @@
 
 int _printf(const char *format, ...);
 
+typedef struct class{
+    char *charater;
+    void (*fuction)();
+} class;
+
 #endif
