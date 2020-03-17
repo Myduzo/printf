@@ -11,12 +11,14 @@ int _printf(const char *format, ...)
 class new[] = {
 {"c", p_char},
 {"s", p_string},
+{"d", p_decimal},
+{"i", p_integer},
 {"%", p_percent}
 };
 
 va_list argument;
 int count = 0;
-int len, i, j;
+int len, i, j, x;
 
 for (len = 0; format[len]; len++)
 ;
@@ -29,63 +31,34 @@ return (-1);
 /*format [0, ...]*/
 for (i = 0; i < len; i++)
 {
-/*new[0, ...].character*/
-for (j = 0; j < 2; j++)
-{
-if (format[i] == '%' && format[i + 1] == '\0')
-return (-1);
-/*if the character from format match character from the array*/
-if (format[i] == '%' && format[i + 1] == *new[j].character)
-{
-new[j].function(argument);
-if (i < (len))
-_putchar(',');
-_putchar(' ');
-count++;
+    /*new[0, ...].character*/
+    for (j = 0; j < 2; j++)
+    {
+        if (format[i] == '%' && format[i + 1] == '\0')
+        return (-1);
+
+        if (!format && argument == NULL)
+        {
+            for (x = 0; x < len; x++)
+            _putchar(format[x]);
+            return (1);
+        }
+
+        /*if the character from format match character from the array*/
+        if (format[i] == '%' && format[i + 1] == *new[j].character)
+        {
+            count++;
+            new[j].function(argument);
+            if (i <= count)
+            {
+                _putchar(',');
+                _putchar(' ');
+            }
+        }
+    }
 }
-}
-}
-_putchar('\n');
+
 va_end(argument);
+printf("\n%d\n", count);
 return (count);
-}
-
-
-
-/**
- * p_char - print a character
- * @a: the character to print
- * Return: Always 0
- */
-void p_char(va_list a)
-{
-char c;
-c = va_arg(a, int);
-_putchar(c);
-}
-
-/**
- * p_string - print a string
- * @a: the string to print
- * Return: Always 0
- */
-void p_string(va_list a)
-{
-int i;
-char *s;
-s = va_arg(a, char *);
-for (i = 0; s[i] != '\0'; i++)
-_putchar(s[i]);
-}
-
-/**
- * p_percent - print a string
- * @a: the string to print
- * Return: Always 0
- */
-void p_percent(va_list a)
-{
-char c;
-c = va_arg(a, int);
-_putchar(c);
 }

@@ -7,6 +7,8 @@ int _putchar(char c);
 void p_char(va_list a);
 void p_string(va_list a);
 void p_percent(va_list a);
+void p_decimal(va_list a);
+void p_integer(va_list a);
 
 /**
  * struct class - a new class

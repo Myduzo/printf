@@ -8,6 +8,7 @@
 int main()
 {
     //printf("main work\n");
-    _printf("%c%s", 'a', "akljfgafaui");
+    _printf("%c%s%c%s", 'a', "abcde", 'q', "qwerty");
+    //_printf("Aafhva");
     return (0);
 }
