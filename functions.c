@@ -30,18 +30,6 @@ _putchar(s[i]);
  * @a: the string to print
  * Return: Always 0
  */
-void p_percent(va_list a)
-{
-char c;
-c = va_arg(a, int);
-_putchar(c);
-}
-
-/**
- * p_percent - print a string
- * @a: the string to print
- * Return: Always 0
- */
 void p_decimal(va_list a)
 {
 char c;

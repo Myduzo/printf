@@ -12,19 +12,16 @@ class new[] = {
 {"c", p_char},
 {"s", p_string},
 {"d", p_decimal},
-{"i", p_integer},
-{"%", p_percent}
+{"i", p_integer}
 };
 
 va_list argument;
 int count = 0;
 int len, i, j, x;
 
-for (len = 0; format[len]; len++)
+for (len = 0; format[len] != '\0'; len++)
 ;
-
 va_start(argument, format);
-
 if (!format || argument == NULL)
 return (-1);
 
@@ -36,29 +33,34 @@ for (i = 0; i < len; i++)
     {
         if (format[i] == '%' && format[i + 1] == '\0')
         return (-1);
-
+        /* if format is just a string */
         if (!format && argument == NULL)
         {
             for (x = 0; x < len; x++)
             _putchar(format[x]);
             return (1);
         }
-
+        /* for "%%" */ 
+        if (format[i] == '%' && format[i + 1] == '%')
+        {
+            _putchar('%');
+            i++;
+        }
         /*if the character from format match character from the array*/
         if (format[i] == '%' && format[i + 1] == *new[j].character)
-        {
+        { 
             count++;
             new[j].function(argument);
-            if (i <= count)
+            if (i < len)
             {
                 _putchar(',');
                 _putchar(' ');
             }
         }
     }
+    check_special(format[i], format[i + 1]);
 }
-
 va_end(argument);
-printf("\n%d\n", count);
+printf("%d\n", count);
 return (count);
 }
