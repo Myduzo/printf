@@ -45,11 +45,11 @@ void p_char(va_list a)
 {
     char c;
     c = va_arg(a, int);
-    write(1, &c, 1);
+    _putchar(c);
 }
 void p_string(va_list a)
 {
     char *s;
     s = va_arg(a, char *);
-    write(1, &s, 1);
+    _putchar(s);
 }
