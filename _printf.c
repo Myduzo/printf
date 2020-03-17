@@ -3,46 +3,52 @@
 /**
  * _printf - recreat the function printf
  * @format: format of the entry
- * Return: Always 0
+ * Return: Always 0 
  */
 int _printf(const char *format, ...)
 {
     class new[] = {
         {"c", p_char},
-        {"i", p_int},
-        {"f", p_float},
-        {"s", p_string}
-    };
+        {"s", p_string}};
 
-    va_list a;
-    int len, i, j ,len;
+    va_list argument;
+    int count = 0;
+    int len, i, j;
+    char *seperation;
 
-    for (len = 0; format[len]; len++);
+    seperation = ", ";
+    for (len = 0; format[len]; len++)
+        ;
 
-    va_start(a, format);
+    va_start(argument, format);
+    //format [0, ...]
     for (i = 0; i < len; i++)
     {
-        for (j = 0; j < 2; j+=2)
+        //new[0, ...].character
+        for (j = 0; j < 2; j++)
         {
-            if (format[i] == *new[0].character)
+            //if the character from format match character from the array
+            if (format[i] == *new[j].character)
             {
-                new[0].function(a);
+                new[j].function(argument);
+                if (i < (len - 1))
+                    printf("%s", seperation);
+                count++;
             }
         }
     }
     printf("\n");
-    va_end(a);
-    return ();
+    va_end(argument);
+    //printf("%d", count);
+    return (count);
 }
 
-
-
-
-void print_char(va_list argument)
+void p_char(va_list a)
 {
-    return (write(1, va_arg(argument, int), 1));
+    printf("%c", va_arg(a, int));
+    //write(1, va_arg(a, int), 1);
 }
-void print_string(va_list argument)
+void p_string(va_list a)
 {
-    return (write(1, va_arg(argument, char *), 1));
+    printf("%s", va_arg(a, char *));
 }

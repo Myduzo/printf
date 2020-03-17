@@ -1,10 +1,13 @@
 #include "holberton.h"
+#include <stdio.h>
+#include <stdarg.h>
 /**
  * main - main fun
  */
 
-int main(void)
+int main()
 {
-    _printf("%c" , "a");
+    printf("main work\n");
+    _printf("cs", 'a', "strring");
     return (0);
 }
