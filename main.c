@@ -8,6 +8,6 @@
 int main()
 {
     //printf("main work\n");
-    _printf("cs", 'a', "akljfgafaui");
+    _printf("%c%s", 'a', "akljfgafaui");
     return (0);
 }
