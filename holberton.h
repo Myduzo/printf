@@ -8,6 +8,11 @@ void p_char(va_list a);
 void p_string(va_list a);
 void p_percent(va_list a);
 
+/**
+ * struct class - a new class
+ * @character: the character specifier
+ * @function: the function required
+ */
 typedef struct class
 {
 char *character;
