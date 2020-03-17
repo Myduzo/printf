@@ -37,6 +37,8 @@ if (format[i] != '%' && format[i - 1] != '%')
 {
 _putchar(format[i]);
 }
+if (format[i] == '\\' && format[i + 1] == 'n')
+_putchar('\n');
 }
 va_end(argument);
 return (count);
