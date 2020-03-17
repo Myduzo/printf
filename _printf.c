@@ -34,3 +34,15 @@ int _printf(const char *format, ...)
     va_end(a);
     return ();
 }
+
+
+
+
+void print_char(va_list argument)
+{
+    return (write(1, va_arg(argument, int), 1));
+}
+void print_string(va_list argument)
+{
+    return (write(1, va_arg(argument, char *), 1));
+}
