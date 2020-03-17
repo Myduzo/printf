@@ -9,8 +9,8 @@ void p_string(va_list a);
 
 typedef struct class
 {
-    char *character;
-    void (*function)();
+char *character;
+void (*function)();
 } class;
 
 #endif

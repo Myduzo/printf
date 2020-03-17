@@ -9,14 +9,13 @@ int _printf(const char *format, ...)
 {
     class new[] = {
         {"c", p_char},
-        {"s", p_string}};
+        {"s", p_string}
+    };
 
     va_list argument;
     int count = 0;
     int len, i, j;
-    char *seperation;
 
-    seperation = ", ";
     for (len = 0; format[len]; len++);
 
     va_start(argument, format);
@@ -30,16 +29,20 @@ int _printf(const char *format, ...)
             if (format[i] == *new[j].character)
             {
                 new[j].function(argument);
-                //if (i < (len - 1))
-                    
+                if (i < (len - 1))
+                _putchar(',');
+                _putchar(' ');    
                 count++;
             }
         }
     }
-    _putchar("\n");
+    _putchar('\n');
     va_end(argument);
     return (count);
 }
+
+
+
 
 void p_char(va_list a)
 {
@@ -49,7 +52,9 @@ void p_char(va_list a)
 }
 void p_string(va_list a)
 {
+    int i;
     char *s;
     s = va_arg(a, char *);
-    _putchar(s);
+    for (i = 0; s[i] != '\0'; i++)
+    _putchar(s[i]);
 }

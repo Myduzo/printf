@@ -7,7 +7,7 @@
 
 int main()
 {
-    printf("main work\n");
-    _printf("cs", 'a', "strring");
+    //printf("main work\n");
+    _printf("cs", 'a', "akljfgafaui");
     return (0);
 }
