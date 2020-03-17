@@ -1,0 +1,54 @@
+.TH man 1 "17 March 2020" "0.01" "_printf man page"
+.SH NAME
+.B _printf
+- format and output data.
+.SH SYNOPSIS
+int _printf(const char *format, ...);
+.SH DESCRIPTION
+The _printf Agument according to format, or execute according to option:
+.I help
+display this help and exit.
+.I formats
+As described below.
+
+.B Return value
+.br
+.RS 3
+Upon successful return, these functions return the number of characters
+printed (excluding the null byte used to end output to strings).
+.RE
+
+.B The conversion specifier
+.br
+.RS 3
+A character that specifies the type of conversion to be applied. The
+conversion specifiers and their meanings are:
+.TP
+.B d
+The argument is treated as an integer and presented as a binary number.
+.LP
+.TP
+.B o
+The argument is treated as an integer and presented as an octal number.
+.LP
+.B u
+The argument is treated as an integer and presented as an unsigned decimal number.
+.LP
+.TP
+.B c
+The argument is treated as an integer and presented as the character with that ASCII.
+.LP
+.TP
+.B s
+The argument is treated and presented as a string.
+.LP
+.TP
+.B f
+The argument is treated as a float and presented as a floating-point number.
+.LP
+.TP
+.RE
+.SH AUTHOR
+written by :
+Yosri Bouabid.
+Youssef Sahli.
