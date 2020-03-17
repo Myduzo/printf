@@ -8,7 +8,7 @@
  */
 int _printf(const char *format, ...)
 {
-char *types = "c, s, i, d";
+char *types = "csid";
 
 va_list argument;
 int count = 0;
@@ -30,11 +30,10 @@ return (-1);
 if (format[i] == '%' && format[i + 1] == types[j])
 {
 sub_print(format[i + 1], argument);
-i += 2;
+i++;
 }
-
 }
-if (format[i] != '%')
+if (format[i] != '%' && format[i - 1] != '%')
 {
 _putchar(format[i]);
 }
