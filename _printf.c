@@ -61,6 +61,6 @@ for (i = 0; i < len; i++)
     check_special(format[i], format[i + 1]);
 }
 va_end(argument);
-printf("%d\n", count);
+
 return (count);
 }
