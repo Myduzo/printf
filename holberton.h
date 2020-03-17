@@ -3,6 +3,7 @@
 #include <stdarg.h>
 
 int _printf(const char *format, ...);
+void sub_print(char c, va_list a);
 int _putchar(char c);
 
 void p_char(va_list a);
