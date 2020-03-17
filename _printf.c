@@ -48,19 +48,18 @@ for (i = 0; i < len; i++)
         }
         /*if the character from format match character from the array*/
         if (format[i] == '%' && format[i + 1] == *new[j].character)
-        { 
-            count++;
+        {
             new[j].function(argument);
             if (i < len)
             {
                 _putchar(',');
                 _putchar(' ');
             }
+            count++;
         }
     }
-    check_special(format[i], format[i + 1]);
 }
+printf("%d", count);
 va_end(argument);
-
 return (count);
 }
