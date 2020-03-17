@@ -17,8 +17,7 @@ int _printf(const char *format, ...)
     char *seperation;
 
     seperation = ", ";
-    for (len = 0; format[len]; len++)
-        ;
+    for (len = 0; format[len]; len++);
 
     va_start(argument, format);
     //format [0, ...]
@@ -31,15 +30,14 @@ int _printf(const char *format, ...)
             if (format[i] == *new[j].character)
             {
                 new[j].function(argument);
-                if (i < (len - 1))
-                    printf("%s", seperation);
+                //if (i < (len - 1))
+                    
                 count++;
             }
         }
     }
-    printf("\n");
+    _putchar("\n");
     va_end(argument);
-
     return (count);
 }
 
@@ -48,12 +46,10 @@ void p_char(va_list a)
     char c;
     c = va_arg(a, int);
     write(1, &c, 1);
-
 }
 void p_string(va_list a)
 {
     char *s;
     s = va_arg(a, char *);
     write(1, &s, 1);
-
 }
