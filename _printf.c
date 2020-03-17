@@ -3,7 +3,7 @@
 /**
  * _printf - recreat the function printf
  * @format: format of the entry
- * Return: Always 0 
+ * Return: Always 0
  */
 int _printf(const char *format, ...)
 {
@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 
     for (len = 0; format[len]; len++);
 
-    va_start(a, foramt);
+    va_start(a, format);
     for (i = 0; i < len; i++)
     {
         for (j = 0; j < 2; j+=2)
@@ -33,16 +33,4 @@ int _printf(const char *format, ...)
     printf("\n");
     va_end(a);
     return ();
-}
-
-
-
-
-void print_char(va_list argument)
-{
-    return (write(1, va_arg(argument, int), 1));
-}
-void print_string(va_list argument)
-{
-    return (write(1, va_arg(argument, char *), 1));
 }

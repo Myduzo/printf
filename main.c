@@ -3,7 +3,8 @@
  * main - main fun
  */
 
-void main(void)
+int main(void)
 {
-    _printf("%c", "a");
+    _printf("%c" , "a");
+    return (0);
 }
