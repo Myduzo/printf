@@ -45,10 +45,15 @@ int _printf(const char *format, ...)
 
 void p_char(va_list a)
 {
-    printf("%c", va_arg(a, int));
-    //write(1, va_arg(a, int), 1);
+    char c;
+    c = va_arg(a, int);
+    write(1, &c, 1);
+    //printf("%c", va_arg(a, int));
 }
 void p_string(va_list a)
 {
-    printf("%s", va_arg(a, char *));
+    char *s;
+    s = va_arg(a, char *);
+    write(1, &s, 1);
+    //printf("%s", va_arg(a, char *));
 }
