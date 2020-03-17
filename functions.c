@@ -32,7 +32,7 @@ _putchar(s[i]);
  */
 void p_decimal(va_list a)
 {
-char c;
+int c;
 c = va_arg(a, int);
 _putchar(c);
 }
@@ -44,7 +44,7 @@ _putchar(c);
  */
 void p_integer(va_list a)
 {
-char c;
+int c;
 c = va_arg(a, int);
 _putchar(c);
 }

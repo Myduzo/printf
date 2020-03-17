@@ -14,7 +14,7 @@ class new[] = {
 
 va_list argument;
 int count = 0;
-int len, i, j, x;
+int len, i, j;
 
 for (len = 0; format[len] != '\0'; len++)
 ;
