@@ -22,9 +22,12 @@ sub_print(format[i + 1], arg, &count2);
 i += 2;
 count += count2;
 }
+else
+{
 _putchar(format[i]);
 i++;
 count++;
+}
 }
 va_end(arg);
 return (count);

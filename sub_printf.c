@@ -7,7 +7,7 @@
  * @c : the character to print
  * @a : the argument to pass
  */
-void sub_print(char c, va_list a)
+void sub_print(char c, va_list a, int *count2)
 {
 int *count2;
 class new[] = {
@@ -23,7 +23,7 @@ for (i = 0; new[i].ch != NULL; i++)
 {
 if (c == *new[i].ch)
 {
-count2 = new[i].func(a);
+*count2 = new[i].func(a);
 }
 if (c == '%')
 _putchar('%');

@@ -3,13 +3,13 @@
 #include <stdarg.h>
 
 int _printf(const char *format, ...);
-void sub_print(char c, va_list a);
+void sub_print(char c, va_list a, int *i);
 int _putchar(char c);
 
-void p_char(va_list a);
-void p_string(va_list a);
-void p_decimal(va_list a);
-void p_integer(va_list a);
+int p_char(va_list a);
+int p_string(va_list a);
+int p_decimal(va_list a);
+int p_integer(va_list a);
 
 /**
  * struct class - a new class
