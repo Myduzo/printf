@@ -19,7 +19,7 @@ int p_integer(va_list a);
 typedef struct class
 {
 char *ch;
-void (*func)();
+int (*func)();
 } class;
 
 #endif

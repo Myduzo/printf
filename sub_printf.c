@@ -9,7 +9,6 @@
  */
 void sub_print(char c, va_list a, int *count2)
 {
-int *count2;
 class new[] = {
 {"c", p_char},
 {"s", p_string},

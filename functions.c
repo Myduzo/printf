@@ -37,6 +37,7 @@ int p_decimal(va_list a)
 int c;
 c = va_arg(a, int);
 _putchar(c);
+return (0);
 }
 
 /**
