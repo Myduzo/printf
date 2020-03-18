@@ -16,12 +16,20 @@ va_start(arg, format);
 i = 0;
 while (format[i] != '\0')
 {
+if (format[i] == '%' && format[i + 1] == '\0')
+{
 if (format[i] == '%' && format[i + 1] == '%')
 {
 _putchar('%');
 i += 2;
 count++;
 }
+_putchar('%');
+count++;
+return (count);
+}
+else
+
 
 else if (format[i] == '%')
 {
