@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdarg.h>
+#include <stdlib.h>
 /**
  * _printf - recreat the function printf
  * @format: format of the entry
@@ -10,6 +11,9 @@ int _printf(const char *format, ...)
 va_list arg;
 int count = 0, count2 = 0;
 int i;
+
+if (format == NULL)
+return (-1);
 
 va_start(arg, format);
 
