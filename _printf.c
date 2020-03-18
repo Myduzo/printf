@@ -10,36 +10,26 @@ int _printf(const char *format, ...)
 {
 char *types = "csdi";
 
-va_list argument;
+va_list arg;
 int count = 0;
 int len, i, j;
 
 for (len = 0; format[len] != '\0'; len++)
 ;
-va_start(argument, format);
-if (!format || argument == NULL)
+va_start(arg, format);
+if (!format || arg == NULL)
 return (-1);
 
-for (i = 0; i < len; i++)
+while (!format)
 {
-for (j = 0; j < 5; j++)
-{
-if (format[i] == '%' && format[i + 1] == '\0')
-return (-1);
+if (*format == '%')
+sub_printf(*format++, arg)
 
-if (format[i] == '%' && format[i + 1] == types[j])
+if (*format++)
 {
-sub_print(format[i + 1], argument);
-i++;
+_putchar(*format);
 }
 }
-if (format[i] != '%' && format[i - 1] != '%')
-{
-_putchar(format[i]);
-}
-if (format[i] == '\\' && format[i + 1] == 'n')
-_putchar('\n');
-}
-va_end(argument);
+va_end(arg);
 return (count);
 }
