@@ -8,7 +8,7 @@
  */
 int _printf(const char *format, ...)
 {
-char *types = "csid";
+char *types = "csdi";
 
 va_list argument;
 int count = 0;
