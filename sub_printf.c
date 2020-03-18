@@ -18,11 +18,11 @@ class new[] = {
 };
 int i;
 
-for (i = 0; *new[i].ch != NULL; i++)
+for (i = 0; new[i].ch != NULL; i++)
 {
 if (c == *new[i].ch)
 {
-new[i].function(a);
+new[i].func(a);
 }
 if (c == '%')
 _putchar('%');
