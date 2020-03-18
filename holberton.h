@@ -18,8 +18,8 @@ void p_integer(va_list a);
  */
 typedef struct class
 {
-char *character;
-void (*function)();
+char *ch;
+void (*func)();
 } class;
 
 #endif
