@@ -9,6 +9,7 @@
  */
 void sub_print(char c, va_list a)
 {
+int *count2;
 class new[] = {
 {"c", p_char},
 {"s", p_string},
@@ -22,7 +23,7 @@ for (i = 0; new[i].ch != NULL; i++)
 {
 if (c == *new[i].ch)
 {
-new[i].func(a);
+count2 = new[i].func(a);
 }
 if (c == '%')
 _putchar('%');

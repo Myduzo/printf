@@ -4,11 +4,12 @@
  * @a: the character to print
  * Return: Always 0
  */
-void p_char(va_list a)
+int p_char(va_list a)
 {
 char c;
 c = va_arg(a, int);
 _putchar(c);
+return (1);
 }
 
 /**
@@ -16,13 +17,14 @@ _putchar(c);
  * @a: the string to print
  * Return: Always 0
  */
-void p_string(va_list a)
+int p_string(va_list a)
 {
 int i;
 char *s;
 s = va_arg(a, char *);
 for (i = 0; s[i] != '\0'; i++)
 _putchar(s[i]);
+return (i);
 }
 
 /**
@@ -30,7 +32,7 @@ _putchar(s[i]);
  * @a: the string to print
  * Return: Always 0
  */
-void p_decimal(va_list a)
+int p_decimal(va_list a)
 {
 int c;
 c = va_arg(a, int);
@@ -42,9 +44,10 @@ _putchar(c);
  * @a: the string to print
  * Return: Always 0
  */
-void p_integer(va_list a)
+int p_integer(va_list a)
 {
 int c;
 c = va_arg(a, int);
 _putchar(c);
+return (1);
 }

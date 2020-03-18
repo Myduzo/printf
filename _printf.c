@@ -8,7 +8,7 @@
 int _printf(const char *format, ...)
 {
 va_list arg;
-int count = 0;
+int count = 0, count2 = 0;
 int i;
 
 va_start(arg, format);
@@ -18,11 +18,13 @@ while (format[i] != '\0')
 {
 if (format[i] == '%')
 {
-sub_print(format[i + 1], arg);
+sub_print(format[i + 1], arg, &count2);
 i += 2;
+count += count2;
 }
 _putchar(format[i]);
 i++;
+count++;
 }
 va_end(arg);
 return (count);
