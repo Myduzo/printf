@@ -23,11 +23,11 @@ while (format[i] != '\0')
 if (format[i] == '%')
 {
 sub_printf(format[i + 1], arg);
+i += 2;
 }
 _putchar(format[i]);
 i++;
 }
-if ()
 va_end(arg);
 return (count);
 }
