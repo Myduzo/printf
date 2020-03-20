@@ -35,7 +35,15 @@ return (i);
 int p_decimal(va_list a)
 {
 int d;
+
+
+for (d = 0; d < 9; d++)
 d = va_arg(a, int);
+if (d >= 10)
+{
+_putchar(d / 10 + '0');
+_putchar(d % 10 + '0');
+}
 _putchar(d + '0');
 return (0);
 }

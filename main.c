@@ -10,6 +10,6 @@
 int main()
 {
 //_printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
-_printf("There is %i bytes in %i KB\n", 1024, 1);
+_printf("%d", 11);
 return (0);
 }
