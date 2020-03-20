@@ -35,26 +35,30 @@ return (i);
 int p_decimal(va_list a)
 {
 int d;
-
 d = va_arg(a, int);
+
 if (d >= 10)
 {
 _putchar(d / 10 + '0');
 _putchar(d % 10 + '0');
 }
-if (d >= 100)
+else if (d >= 100)
 {
-_putchar(d / 10 + '0');
-_putchar(d % 100 + '0');
+_putchar(d / 100 + '0');
+_putchar(d / 10 % 10 + '0');
+_putchar(d % 10 + '0');
 }
-if (d >= 1000)
+else if (d >= 1000)
 {
-_putchar(d / 10 + '0');
-_putchar(d % 1000 + '0');
+_putchar(d / 1000 + '0');
+_putchar(d / 100 % 10 + '0');
+_putchar(d / 10 % 10 + '0');
+_putchar(d % 10 + '0');
 }
 else
+{
 _putchar(d + '0');
-
+}
 return (0);
 }
 
