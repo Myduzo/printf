@@ -81,10 +81,11 @@ return (i);
 int p_binary(va_list a)
 {
 int x;
+x = va_arg(a, int);
 if (x / 2 == 0)
 return(0);
-
-p_binary(x / 2);
+count++;
+p_binary(x / 2, *count);
 _putchar(x % 2);
-
+return (count)
 }
