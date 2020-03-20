@@ -34,7 +34,7 @@ return (i);
  */
 int p_decimal(va_list a)
 {
-int d, i, r, n;
+int d, i, z, r, n;
 
 d = va_arg(a, int);
 i = 1;
@@ -46,9 +46,22 @@ _putchar('-');
 i++;
 }
 
-for (n = 1; n < d / 10; n *= 10)
+for (n = 1; n <= d / 10; n *= 10)
 i++;
-while (d > 10)
+
+if (n == d)
+{
+_putchar('1');
+z = n;
+while (z >= 10)
+{
+_putchar(48);
+z /= 10;
+}
+return(i);
+}
+
+while (d >= 10)
 {
 r = d / n;
 _putchar (r + '0');
@@ -59,37 +72,6 @@ _putchar(d + '0');
 return (i);
 }
 
-/**
- * p_integer - print a string
- * @a: the integer to print
- * Return: Always 0
- */
-int p_integer(va_list a)
-{
-int i;
-
-for (i = 0; i < 10; i++)
-{
-i = va_arg(a, int);
-if (i >= 10)
-{
-_putchar(i = i / 10 + '0');
-_putchar(i = i % 10 + '0');
-}
-if (i >= 100)
-{
-_putchar(i = i / 10 + '0');
-_putchar(i = i % 100 + '0');
-}
-if (i >= 1000)
-{
-_putchar(i = i / 10 + '0');
-_putchar(i = i % 1000 + '0');
-}
-}
-_putchar(i + '0');
-return (1);
-}
 
 
 
