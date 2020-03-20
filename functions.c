@@ -28,29 +28,43 @@ return (i);
 }
 
 /**
+ * p_decimal - print a string
+ * @a: the decimal to print
+ * Return: Always 0
+ */
+int p_decimal(va_list a)
+{
+int d;
+d = va_arg(a, int);
+
+if (d < 0)
+{
+_putchar('-');
+d = -d;
+}
+
+_putchar(d + '0');
+return (0);
+}
+
+/**
  * p_integer - print a string
- * @a: the string to print
+ * @a: the integer to print
  * Return: Always 0
  */
 int p_integer(va_list a)
 {
 int i;
 i = va_arg(a, int);
-_putchar(i);
+
+if (i < 0)
+{
+_putchar('-');
+i = -i;
+}
+
+_putchar(i + '0');
 return (1);
 }
 
-/**
- * p_decimal - print a string
- * @a: the string to print
- * Return: Always 0
- */
-int p_decimal(va_list a)
-{
-int i, d;
-d = va_arg(a, int);
-for (i = 0; i < d; i++)
-_putchar(d);
-return (i);
-}
 
