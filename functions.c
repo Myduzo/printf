@@ -78,14 +78,33 @@ return (i);
  * @a: the binary to print
  * Return: Always 0
  */
-int p_binary(va_list a, int *count)
+int p_binary(va_list a)
 {
 int x;
+int count = 0;
 x = va_arg(a, int);
 if (x / 2 == 0)
-return(0);
+return (0);
+
 count++;
-p_binary(x / 2, *count);
+p_binary(x / 2);
 _putchar(x % 2);
+
 return (count);
 }
+
+/**
+ * binary - print a binary
+ * @: the binary to print
+ * Return: Always 0
+ */
+void binary(int x)
+{
+int x;
+if(x / 2 == 0)
+return (0);
+
+p_binary(x / 2);
+_putchar(x % 2);
+}
+
