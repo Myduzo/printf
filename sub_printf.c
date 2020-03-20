@@ -6,6 +6,7 @@
  * sub_print - next step
  * @c : the character to print
  * @a : the argument to pass
+ * @count2 : counter
  */
 void sub_print(char c, va_list a, int *count2)
 {

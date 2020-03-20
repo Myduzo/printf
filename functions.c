@@ -28,7 +28,7 @@ return (i);
 }
 
 /**
- * p_percent - print a string
+ * p_decimal - print a string
  * @a: the string to print
  * Return: Always 0
  */
@@ -41,7 +41,7 @@ return (0);
 }
 
 /**
- * p_percent - print a string
+ * p_integer - print a string
  * @a: the string to print
  * Return: Always 0
  */

@@ -1,6 +1,8 @@
 #include "holberton.h"
 #include <stdarg.h>
 #include <stdlib.h>
+#include <stddef.h>
+
 /**
  * _printf - recreat the function printf
  * @format: format of the entry
@@ -20,6 +22,7 @@ va_start(arg, format);
 i = 0;
 while (format[i] != '\0')
 {
+
 if (format[i] == '%' && format[i + 1] == '\0')
 {
 _putchar('%');
