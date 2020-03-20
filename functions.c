@@ -54,7 +54,7 @@ d -= r * n;
 n /= 10;
 }
 _putchar(d + '0');
-return (0);
+return (1);
 }
 
 /**
