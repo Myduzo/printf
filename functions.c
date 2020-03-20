@@ -34,31 +34,19 @@ return (i);
  */
 int p_decimal(va_list a)
 {
-int d;
+int d, r, n;
 d = va_arg(a, int);
 
-if (d >= 10)
+for (n = 1; n < d / 10; n *= 10)
+;
+for (; d > 10; d++)
 {
-_putchar(d / 10 + '0');
-_putchar(d % 10 + '0');
+r = d / n;
+_putchar (r + '0');
+d -= r * n;
+n /= 10;
 }
-else if (d >= 100)
-{
-_putchar(d / 100 + '0');
-_putchar(d / 10 % 10 + '0');
-_putchar(d % 10 + '0');
-}
-else if (d >= 1000)
-{
-_putchar(d / 1000 + '0');
-_putchar(d / 100 % 10 + '0');
-_putchar(d / 10 % 10 + '0');
-_putchar(d % 10 + '0');
-}
-else
-{
 _putchar(d + '0');
-}
 return (0);
 }
 
