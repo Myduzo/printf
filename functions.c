@@ -34,7 +34,7 @@ return (i);
  */
 int p_decimal(va_list a)
 {
-int d, r, n;
+int d, i, r, n;
 
 d = va_arg(a, int);
 
@@ -44,8 +44,9 @@ d = d * (-1);
 _putchar('-');
 }
 
+i = 0;
 for (n = 1; n < d / 10; n *= 10)
-;
+i++;
 while (d > 10)
 {
 r = d / n;
@@ -54,7 +55,7 @@ d -= r * n;
 n /= 10;
 }
 _putchar(d + '0');
-return (1);
+return (i);
 }
 
 /**
