@@ -15,6 +15,7 @@ class new[] = {
 {"s", p_string},
 {"d", p_decimal},
 {"i", p_decimal},
+{"b", p_binary},
 {NULL, NULL},
 };
 int i;

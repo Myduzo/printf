@@ -73,6 +73,18 @@ _putchar(d + '0');
 return (i);
 }
 
+/**
+ * p_binary - print a binary
+ * @a: the binary to print
+ * Return: Always 0
+ */
+int p_binary(va_list a)
+{
+int x;
+if (x / 2 == 0)
+return(0);
 
+p_binary(x / 2);
+_putchar(x % 2);
 
-
+}
