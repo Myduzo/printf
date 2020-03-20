@@ -37,14 +37,15 @@ int p_decimal(va_list a)
 int d, i, r, n;
 
 d = va_arg(a, int);
+i = 1;
 
 if (d < 0)
 {
 d = d * (-1);
 _putchar('-');
+i++;
 }
 
-i = 1;
 for (n = 1; n < d / 10; n *= 10)
 i++;
 while (d > 10)
