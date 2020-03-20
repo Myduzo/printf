@@ -36,13 +36,6 @@ int p_decimal(va_list a)
 {
 int d;
 d = va_arg(a, int);
-
-if (d < 0)
-{
-_putchar('-');
-d = -d;
-}
-
 _putchar(d + '0');
 return (0);
 }
@@ -55,16 +48,29 @@ return (0);
 int p_integer(va_list a)
 {
 int i;
-i = va_arg(a, int);
 
-if (i < 0)
+for (i = 0; i < 10; i++)
 {
-_putchar('-');
-i = -i;
+i = va_arg(a, int);
+if (i >= 10)
+{
+_putchar(i = i / 10 + '0');
+_putchar(i = i % 10 + '0');
 }
-
+if (i >= 100)
+{
+_putchar(i = i / 10 + '0');
+_putchar(i = i % 100 + '0');
+}
+if (i >= 1000)
+{
+_putchar(i = i / 10 + '0');
+_putchar(i = i % 1000 + '0');
+}
+}
 _putchar(i + '0');
 return (1);
 }
+
 
 
