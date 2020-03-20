@@ -78,7 +78,7 @@ return (i);
  * @a: the binary to print
  * Return: Always 0
  */
-int p_binary(va_list a)
+int p_binary(va_list a, int *count)
 {
 int x;
 x = va_arg(a, int);
@@ -87,5 +87,5 @@ return(0);
 count++;
 p_binary(x / 2, *count);
 _putchar(x % 2);
-return (count)
+return (count);
 }

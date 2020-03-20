@@ -10,7 +10,7 @@ int p_char(va_list a);
 int p_string(va_list a);
 int p_decimal(va_list a);
 int p_integer(va_list a);
-int p_binary(va_list a);
+int p_binary(va_list a, int *count);
 
 /**
  * struct class - a new class
