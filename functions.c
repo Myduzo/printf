@@ -34,7 +34,8 @@ return (i);
  */
 int p_decimal(va_list a)
 {
-int d, i, z, r, n;
+int i, z, r, n;
+long int d;
 
 d = va_arg(a, int);
 i = 1;
