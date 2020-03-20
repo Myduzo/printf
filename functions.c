@@ -35,11 +35,18 @@ return (i);
 int p_decimal(va_list a)
 {
 int d, r, n;
+
 d = va_arg(a, int);
+
+if (d < 0)
+{
+d = d * (-1);
+_putchar('-');
+}
 
 for (n = 1; n < d / 10; n *= 10)
 ;
-for (; d > 10; d++)
+while (d > 10)
 {
 r = d / n;
 _putchar (r + '0');

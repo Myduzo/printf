@@ -10,6 +10,6 @@
 int main()
 {
 //_printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
-_printf("%d", 101);
+_printf("%d", -1024);
 return (0);
 }
