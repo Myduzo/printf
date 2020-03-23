@@ -100,6 +100,5 @@ s /= 10;
 _putchar(r + '0');
 }
 
-
 return (i);
 }

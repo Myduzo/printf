@@ -16,6 +16,10 @@ class new[] = {
 {"d", p_decimal},
 {"i", p_decimal},
 {"b", p_binary},
+{"u", p_unsigned_decimal},
+//{"o", p_octal},
+{"x", p_hexadecimal},
+{"X", p_hexadecimal},
 {NULL, NULL},
 };
 int i;
