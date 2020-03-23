@@ -80,31 +80,24 @@ return (i);
  */
 int p_binary(va_list a)
 {
-int x;
-int y;
-int count = 0;
-x = va_arg(a, int);
-binary(x);
-y = x;
-for (count = 0; y >= 10; count++)
+int r, s = 0, i;
+for(i = 0; x / 2 != 0; i++)
 {
-y /= 10;
-}
-return (count);
+r = x % 2;
+x /= 2;
+s *= 10;
+s += r;
 }
 
-/**
- * binary - print a binary
- * @x : the binary to print
- * Return: Always 0
- */
-int binary(int x)
+x = 0;
+for (i = 0; s != 0; i++)
 {
-if(x / 2 == 0)
-return (0);
-
-binary(x / 2);
-_putchar(x % 2);
-return (1);
+r = s % 10;
+s /= 10;
+x *= 10;
+x += r;
 }
+_putchar(x);
 
+return (i);
+}
