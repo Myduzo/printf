@@ -79,25 +79,31 @@ return (i);
  * Return: Always 0
  */
 int p_binary(va_list a)
-{
-int r, s = 0, i;
-int x;
+{   
+int x = va_arg(a, int);
+int r, i, j, k, len;
+int aux;
+int c[100];
 
-x = va_arg(a ,int);
-for(i = 0; x / 2 != 0; i++)
+for (i = 0; x / 2 != 0; i++)
 {
 r = x % 2;
+c[i] = r;
 x /= 2;
-s *= 10;
-s += r;
+}
+c[i] = x % 2;
+
+len = i;
+for (j = 0; j < i; i--, j++)
+{
+aux = c[j];
+c[j] = c[i];
+c[i] = aux;
 }
 
-x = 0;
-for (i = 0; s != 0; i++)
+for (k = 0; k <= len; k++)
 {
-r = s % 10;
-s /= 10;
-_putchar(r + '0');
+_putchar(c[k] + '0');
 }
 
 return (i);

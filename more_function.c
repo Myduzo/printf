@@ -75,7 +75,7 @@ count++;
 }
 else
 {
-_putchar(r);
+_putchar(r + '0');
 count++;
 }
 o /= x;
