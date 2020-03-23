@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-_printf("%b", 1024);
+_printf("%x", 64565);
     return (0);
 }

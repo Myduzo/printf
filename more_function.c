@@ -55,11 +55,10 @@ return (i);
  */
 int p_hexadecimal(va_list a)
 {
-int i = 0, x, r, o, count = 0;
+int i = 0, x, r, o, count = 0, len, j, aux, k;
+char *s = "abcdef", c[100];
 o = va_arg(a, int);
-char *s = "abcdef";
 x = 16;
-r = o % x;
 while(o != 0)
 {
 r = o % x;
@@ -67,18 +66,25 @@ if (r >= 10)
 {
 r -= 10;
 while (i != r)
-{
 i++;
-}
-_putchar(s[i]);
+c[i] = s[i];
 count++;
 }
 else
 {
-_putchar(r + '0');
+c[i] = r;
 count++;
 }
 o /= x;
 }
+len = count;
+for (j = 0; j < i; i--, j++)
+{
+aux = c[j];
+c[j] = c[i];
+c[i] = aux;
+}
+for (k = 0; k < len; k++)
+_putchar(c[k] + '0');
 return (count);
 }
