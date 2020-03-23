@@ -81,6 +81,9 @@ return (i);
 int p_binary(va_list a)
 {
 int r, s = 0, i;
+int x;
+
+x = va_arg(a ,int);
 for(i = 0; x / 2 != 0; i++)
 {
 r = x % 2;
@@ -94,10 +97,9 @@ for (i = 0; s != 0; i++)
 {
 r = s % 10;
 s /= 10;
-x *= 10;
-x += r;
+_putchar(r + '0');
 }
-_putchar(x);
+
 
 return (i);
 }
