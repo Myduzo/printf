@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-_printf("%x", 64565);
+_printf("Let's print a simple sentence.\n");
     return (0);
 }
