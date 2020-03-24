@@ -12,7 +12,6 @@ int p_decimal(va_list a);
 int p_integer(va_list a);
 int p_binary(va_list a);
 int p_unsigned_decimal(va_list a);
-//int p_octal(va_list a);
 int p_hexadecimal(va_list a);
 
 
